@@ -1,7 +1,7 @@
 package com.inmemorycache.cache.eviction_policy;
 
-import com.inmemorycache.cache.eviction_policy_helper.DoublyLinkedList;
-import com.inmemorycache.cache.eviction_policy_helper.DoublyLinkedListNode;
+import com.inmemorycache.cache.helper.DoublyLinkedList;
+import com.inmemorycache.cache.helper.DoublyLinkedListNode;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package com.inmemorycache.cache.eviction_policy_helper;
+package com.inmemorycache.cache.helper;
 
 public class DoublyLinkedListNode<E> {
     DoublyLinkedListNode<E> next;

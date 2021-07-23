@@ -1,4 +1,4 @@
-package com.inmemorycache.cache.eviction_policy_helper;
+package com.inmemorycache.cache.helper;
 
 import com.inmemorycache.cache.exception.UnexpectedStateException;
 import java.util.NoSuchElementException;
