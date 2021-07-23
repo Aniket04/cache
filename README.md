@@ -70,6 +70,9 @@
         Cache<String, String> myCache = new CustomCache<String,String>(10, new CustomEvictionPolicyForTest<String>());
         myCache.put("1", "test1");
         String value = myCache.get("1");
+        
+        
+ Please refer Unit Test Cases for more clearity.
 
 
 
