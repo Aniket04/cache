@@ -1,7 +1,9 @@
 package com.inmemorycache.cache.storage;
 
+import com.inmemorycache.cache.exception.StorageFullException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class HashMapBasedStorage<Key, Value> implements Storage<Key, Value> {
 
@@ -14,20 +16,20 @@ public class HashMapBasedStorage<Key, Value> implements Storage<Key, Value> {
     }
 
     @Override
-    public void add(Key key, Value value) throws RuntimeException {
-        if (isStorageFull()) throw new RuntimeException("Capacity Full.....");
+    public void add(Key key, Value value) throws StorageFullException {
+        if (isStorageFull()) throw new StorageFullException("Storage Full");
         storage.put(key, value);
     }
 
     @Override
-    public void remove(Key key) throws RuntimeException {
-        if (!storage.containsKey(key)) throw new RuntimeException(key + "doesn't exist in cache.");
+    public void remove(Key key) throws NoSuchElementException {
+        if (!storage.containsKey(key)) throw new NoSuchElementException(key + "doesn't exist in cache.");
         storage.remove(key);
     }
 
     @Override
-    public Value get(Key key) throws RuntimeException {
-        if (!storage.containsKey(key)) throw new RuntimeException(key + "doesn't exist in cache.");
+    public Value get(Key key) throws NoSuchElementException {
+        if (!storage.containsKey(key)) throw new NoSuchElementException(key + "doesn't exist in cache.");
         return storage.get(key);
     }
 
